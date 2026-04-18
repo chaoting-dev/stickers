@@ -7,3 +7,9 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+# In-order to allow the manifest file, we need to ignore the entire stickers directory, but then un-ignore the manifest file and its parent directories
+/static/stickers/*
+!/static/
+!/static/stickers/
+!/static/stickers/manifest.json

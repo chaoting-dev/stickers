@@ -1,0 +1,43 @@
+{
+  "groups": [
+    {
+      "id": "001",
+      "name": "鼠鼠情侶甜蜜日常: 親親抱抱",
+      "cover": "01",
+      "stickers": [
+        { "id": "826130457", "name": "1", "tags": [], "hasKey": true },
+        { "id": "826130458", "name": "2", "tags": [], "hasKey": true },
+        { "id": "826130459", "name": "3", "tags": [], "hasKey": true },
+        { "id": "826130460", "name": "4", "tags": [], "hasKey": true },
+        { "id": "826130461", "name": "5", "tags": [], "hasKey": true },
+        { "id": "826130462", "name": "6", "tags": [], "hasKey": true },
+        { "id": "826130463", "name": "7", "tags": [], "hasKey": true },
+        { "id": "826130464", "name": "8", "tags": [], "hasKey": true },
+        { "id": "826130465", "name": "9", "tags": [], "hasKey": true },
+        { "id": "826130466", "name": "10", "tags": [], "hasKey": true },
+        { "id": "826130467", "name": "11", "tags": [], "hasKey": true },
+        { "id": "826130468", "name": "12", "tags": [], "hasKey": true },
+        { "id": "826130469", "name": "13", "tags": [], "hasKey": true },
+        { "id": "826130470", "name": "14", "tags": [], "hasKey": true },
+        { "id": "826130471", "name": "15", "tags": [], "hasKey": true },
+        { "id": "826130472", "name": "16", "tags": [], "hasKey": true },
+        { "id": "826130473", "name": "17", "tags": [], "hasKey": true },
+        { "id": "826130474", "name": "18", "tags": [], "hasKey": true },
+        { "id": "826130475", "name": "19", "tags": [], "hasKey": true },
+        { "id": "826130476", "name": "20", "tags": [], "hasKey": true },
+        { "id": "826130477", "name": "21", "tags": [], "hasKey": true },
+        { "id": "826130478", "name": "22", "tags": [], "hasKey": true },
+        { "id": "826130479", "name": "23", "tags": [], "hasKey": true },
+        { "id": "826130480", "name": "24", "tags": [], "hasKey": true },
+        { "id": "826130481", "name": "25", "tags": [], "hasKey": true },
+        { "id": "826130482", "name": "26", "tags": [], "hasKey": true },
+        { "id": "826130483", "name": "27", "tags": [], "hasKey": true },
+        { "id": "826130484", "name": "28", "tags": [], "hasKey": true },
+        { "id": "826130485", "name": "29", "tags": [], "hasKey": true },
+        { "id": "826130486", "name": "30", "tags": [], "hasKey": true },
+        { "id": "826130487", "name": "31", "tags": [], "hasKey": true },
+        { "id": "826130488", "name": "32", "tags": [], "hasKey": true }
+      ]
+    }
+  ]
+}
