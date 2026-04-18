@@ -10,6 +10,8 @@ export interface StickerGroup {
 	name: string;
 	/** Sticker id to use as the group cover thumbnail */
 	cover?: string;
+	/** File extension for the main sticker files, defaults to "png" */
+	ext?: string;
 	stickers: Sticker[];
 }
 

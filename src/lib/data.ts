@@ -18,12 +18,26 @@ export function loadManifest(): Promise<Manifest> {
 	return cached;
 }
 
-export function getStickerUrl(groupId: string, stickerId: string, key = false): string {
-	const suffix = key ? '_key' : '';
-	return `${base}/stickers/${groupId}/${stickerId}${suffix}.png`;
+/**
+ * Returns the URL for a sticker file.
+ * Key files (_key) are always .png; main files use the provided ext (default "png").
+ */
+export function getStickerUrl(
+	groupId: string,
+	stickerId: string,
+	key = false,
+	ext = 'png'
+): string {
+	if (key) return `${base}/stickers/${groupId}/${stickerId}_key.png`;
+	return `${base}/stickers/${groupId}/${stickerId}.${ext}`;
 }
 
-/** Returns the best preview URL: _key.png if available, otherwise main .png */
-export function getPreviewUrl(groupId: string, stickerId: string, hasKey = false): string {
-	return getStickerUrl(groupId, stickerId, hasKey);
+/** Returns the best preview URL: _key.png if available, otherwise main file. */
+export function getPreviewUrl(
+	groupId: string,
+	stickerId: string,
+	hasKey = false,
+	ext = 'png'
+): string {
+	return getStickerUrl(groupId, stickerId, hasKey, ext);
 }

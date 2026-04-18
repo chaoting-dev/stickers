@@ -23,6 +23,8 @@
 	/** Cache of pre-fetched image blobs keyed by sticker id */
 	const blobCache = new SvelteMap<string, Blob>();
 
+	const ext = $derived(group?.ext ?? 'png');
+
 	const filteredStickers = $derived.by(() => {
 		if (!group) return [];
 		const q = searchQuery.toLowerCase().trim();
@@ -52,7 +54,7 @@
 	async function fetchBlob(sticker: Sticker): Promise<Blob | null> {
 		if (blobCache.has(sticker.id)) return blobCache.get(sticker.id)!;
 		try {
-			const res = await fetch(getStickerUrl(groupId, sticker.id));
+			const res = await fetch(getStickerUrl(groupId, sticker.id, false, ext));
 			if (!res.ok) return null;
 			const blob = await res.blob();
 			blobCache.set(sticker.id, blob);
@@ -87,10 +89,10 @@
 		if (blob && e.dataTransfer) {
 			// DataTransfer.items.add(File) passes raw image bytes — Discord and most
 			// apps treat this as an actual image file, not a URL string.
-			e.dataTransfer.items.add(new File([blob], `${sticker.id}.png`, { type: 'image/png' }));
+			e.dataTransfer.items.add(new File([blob], `${sticker.id}.${ext}`, { type: blob.type }));
 		} else {
 			// Absolute URL fallback — at least lets online apps fetch the image
-			const absUrl = new URL(getStickerUrl(groupId, sticker.id), window.location.href).href;
+			const absUrl = new URL(getStickerUrl(groupId, sticker.id, false, ext), window.location.href).href;
 			e.dataTransfer?.setData('text/uri-list', absUrl);
 			e.dataTransfer?.setData('text/plain', absUrl);
 		}
@@ -112,8 +114,8 @@
 		try {
 			const cached = await fetchBlob(sticker);
 			const blob: Blob =
-				cached ?? (await fetch(getStickerUrl(groupId, sticker.id)).then((r) => r.blob()));
-			const file = new File([blob], `${sticker.id}.png`, { type: 'image/png' });
+				cached ?? (await fetch(getStickerUrl(groupId, sticker.id, false, ext)).then((r) => r.blob()));
+			const file = new File([blob], `${sticker.id}.${ext}`, { type: blob.type });
 			if (navigator.canShare?.({ files: [file] })) {
 				await navigator.share({ files: [file] });
 			} else {
@@ -126,7 +128,7 @@
 	}
 
 	async function copyUrl(sticker: Sticker) {
-		const url = new URL(getStickerUrl(groupId, sticker.id), window.location.href).href;
+		const url = new URL(getStickerUrl(groupId, sticker.id, false, ext), window.location.href).href;
 		await navigator.clipboard.writeText(url);
 		copyUrlDone = true;
 		setTimeout(() => (copyUrlDone = false), 2000);
@@ -134,8 +136,8 @@
 
 	function downloadSticker(sticker: Sticker) {
 		const a = document.createElement('a');
-		a.href = getStickerUrl(groupId, sticker.id);
-		a.download = `${sticker.id}.png`;
+		a.href = getStickerUrl(groupId, sticker.id, false, ext);
+		a.download = `${sticker.id}.${ext}`;
 		document.body.appendChild(a);
 		a.click();
 		document.body.removeChild(a);
@@ -188,7 +190,7 @@
 							aria-label={sticker.name}
 						>
 							<img
-								src={getPreviewUrl(group.id, sticker.id, sticker.hasKey)}
+								src={getPreviewUrl(group.id, sticker.id, sticker.hasKey, ext)}
 								alt={sticker.name}
 								class="pointer-events-none h-full w-full object-contain"
 								loading="lazy"
@@ -227,7 +229,7 @@
 				draggable={true} + ondragstart passes actual blob bytes on desktop.
 			-->
 			<img
-				src={getStickerUrl(group.id, selected.id)}
+				src={getStickerUrl(group.id, selected.id, false, ext)}
 				alt={selected.name}
 				class="mx-auto block h-40 w-40 cursor-grab object-contain active:cursor-grabbing sm:h-48 sm:w-48"
 				draggable={true}
@@ -243,10 +245,6 @@
 					{/each}
 				</div>
 			{/if}
-
-			<p class="mt-3 text-center text-xs text-muted-foreground">
-				On mobile: long press the image above → "Copy Image", then paste in any app
-			</p>
 
 			<div class="mt-4 grid grid-cols-2 gap-2">
 				<button

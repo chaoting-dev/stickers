@@ -90,7 +90,7 @@
 							aria-label={sticker.name}
 						>
 							<img
-								src={getPreviewUrl(group.id, sticker.id, sticker.hasKey)}
+								src={getPreviewUrl(group.id, sticker.id, sticker.hasKey, group.ext)}
 								alt={sticker.name}
 								class="h-full w-full object-contain"
 								loading="lazy"

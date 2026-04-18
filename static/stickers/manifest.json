@@ -38,6 +38,38 @@
         { "id": "826130487", "name": "31", "tags": [], "hasKey": true },
         { "id": "826130488", "name": "32", "tags": [], "hasKey": true }
       ]
+    },
+    {
+      "id": "002",
+      "name": "線條小狗",
+      "cover": "02",
+      "stickers": [
+        { "id": "691386753", "name": "1", "tags": [], "hasKey": true },
+        { "id": "691386754", "name": "2", "tags": [], "hasKey": true },
+        { "id": "691386755", "name": "3", "tags": [], "hasKey": true },
+        { "id": "691386756", "name": "4", "tags": [], "hasKey": true },
+        { "id": "691386757", "name": "5", "tags": [], "hasKey": true },
+        { "id": "691386758", "name": "6", "tags": [], "hasKey": true },
+        { "id": "691386759", "name": "7", "tags": [], "hasKey": true },
+        { "id": "691386760", "name": "8", "tags": [], "hasKey": true },
+        { "id": "691386761", "name": "9", "tags": [], "hasKey": true },
+        { "id": "691386762", "name": "10", "tags": [], "hasKey": true },
+        { "id": "691386763", "name": "11", "tags": [], "hasKey": true },
+        { "id": "691386764", "name": "12", "tags": [], "hasKey": true },
+        { "id": "691386765", "name": "13", "tags": [], "hasKey": true },
+        { "id": "691386766", "name": "14", "tags": [], "hasKey": true },
+        { "id": "691386767", "name": "15", "tags": [], "hasKey": true },
+        { "id": "691386768", "name": "16", "tags": [], "hasKey": true },
+        { "id": "691386769", "name": "17", "tags": [], "hasKey": true },
+        { "id": "691386770", "name": "18", "tags": [], "hasKey": true },
+        { "id": "691386771", "name": "19", "tags": [], "hasKey": true },
+        { "id": "691386772", "name": "20", "tags": [], "hasKey": true },
+        { "id": "691386773", "name": "21", "tags": [], "hasKey": true },
+        { "id": "691386774", "name": "22", "tags": [], "hasKey": true },
+        { "id": "691386775", "name": "23", "tags": [], "hasKey": true },
+        { "id": "691386776", "name": "24", "tags": [], "hasKey": true }
+      ],
+      "ext": "gif"
     }
   ]
 }
