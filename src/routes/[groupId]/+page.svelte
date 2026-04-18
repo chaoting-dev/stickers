@@ -7,6 +7,7 @@
 	import Share2Icon from '@lucide/svelte/icons/share-2';
 	import CopyIcon from '@lucide/svelte/icons/copy';
 	import CheckIcon from '@lucide/svelte/icons/check';
+	import LinkIcon from '@lucide/svelte/icons/link';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { SvelteMap } from 'svelte/reactivity';
 
@@ -17,6 +18,7 @@
 	let selected = $state<Sticker | null>(null);
 	let searchQuery = $state('');
 	let copyDone = $state(false);
+	let copyUrlDone = $state(false);
 
 	/** Cache of pre-fetched image blobs keyed by sticker id */
 	const blobCache = new SvelteMap<string, Blob>();
@@ -63,6 +65,7 @@
 	function openSticker(sticker: Sticker) {
 		selected = sticker;
 		copyDone = false;
+		copyUrlDone = false;
 		// Pre-fetch immediately so blob is ready before user drags from modal
 		fetchBlob(sticker);
 	}
@@ -120,6 +123,13 @@
 		} catch {
 			// User cancelled
 		}
+	}
+
+	async function copyUrl(sticker: Sticker) {
+		const url = new URL(getStickerUrl(groupId, sticker.id), window.location.href).href;
+		await navigator.clipboard.writeText(url);
+		copyUrlDone = true;
+		setTimeout(() => (copyUrlDone = false), 2000);
 	}
 
 	function downloadSticker(sticker: Sticker) {
@@ -238,7 +248,7 @@
 				On mobile: long press the image above → "Copy Image", then paste in any app
 			</p>
 
-			<div class="mt-4 grid grid-cols-3 gap-2">
+			<div class="mt-4 grid grid-cols-2 gap-2">
 				<button
 					onclick={() => copyImage(selected!)}
 					class="flex flex-col items-center justify-center gap-1 rounded-xl bg-primary py-3 text-xs font-medium text-primary-foreground active:opacity-80"
@@ -248,7 +258,19 @@
 						Copied!
 					{:else}
 						<CopyIcon class="h-4 w-4" />
-						Copy
+						Copy Image
+					{/if}
+				</button>
+				<button
+					onclick={() => copyUrl(selected!)}
+					class="flex flex-col items-center justify-center gap-1 rounded-xl bg-secondary py-3 text-xs font-medium text-secondary-foreground active:opacity-80"
+				>
+					{#if copyUrlDone}
+						<CheckIcon class="h-4 w-4" />
+						Copied!
+					{:else}
+						<LinkIcon class="h-4 w-4" />
+						Copy URL
 					{/if}
 				</button>
 				<button
