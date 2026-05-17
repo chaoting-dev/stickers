@@ -70,6 +70,53 @@
         { "id": "691386776", "name": "24", "tags": [], "hasKey": true }
       ],
       "ext": "gif"
+    },
+    {
+      "id": "003",
+      "name": "萬用的\"KAPPA & TANUKI\" 台灣版",
+      "cover": "03",
+      "stickers": [
+        { "id": "729353209", "name": "1", "tags": [], "hasKey": false },
+        { "id": "729353210", "name": "2", "tags": [], "hasKey": false },
+        { "id": "729353211", "name": "3", "tags": [], "hasKey": false },
+        { "id": "729353212", "name": "4", "tags": [], "hasKey": false },
+        { "id": "729353213", "name": "5", "tags": [], "hasKey": false },
+        { "id": "729353214", "name": "6", "tags": [], "hasKey": false },
+        { "id": "729353215", "name": "7", "tags": [], "hasKey": false },
+        { "id": "729353216", "name": "8", "tags": [], "hasKey": false },
+        { "id": "729353217", "name": "9", "tags": [], "hasKey": false },
+        { "id": "729353218", "name": "10", "tags": [], "hasKey": false },
+        { "id": "729353219", "name": "11", "tags": [], "hasKey": false },
+        { "id": "729353220", "name": "12", "tags": [], "hasKey": false },
+        { "id": "729353221", "name": "13", "tags": [], "hasKey": false },
+        { "id": "729353222", "name": "14", "tags": [], "hasKey": false },
+        { "id": "729353223", "name": "15", "tags": [], "hasKey": false },
+        { "id": "729353224", "name": "16", "tags": [], "hasKey": false },
+        { "id": "729353225", "name": "17", "tags": [], "hasKey": false },
+        { "id": "729353226", "name": "18", "tags": [], "hasKey": false },
+        { "id": "729353227", "name": "19", "tags": [], "hasKey": false },
+        { "id": "729353228", "name": "20", "tags": [], "hasKey": false },
+        { "id": "729353229", "name": "21", "tags": [], "hasKey": false },
+        { "id": "729353230", "name": "22", "tags": [], "hasKey": false },
+        { "id": "729353231", "name": "23", "tags": [], "hasKey": false },
+        { "id": "729353232", "name": "24", "tags": [], "hasKey": false },
+        { "id": "729353233", "name": "25", "tags": [], "hasKey": false },
+        { "id": "729353234", "name": "26", "tags": [], "hasKey": false },
+        { "id": "729353235", "name": "27", "tags": [], "hasKey": false },
+        { "id": "729353236", "name": "28", "tags": [], "hasKey": false },
+        { "id": "729353237", "name": "29", "tags": [], "hasKey": false },
+        { "id": "729353238", "name": "30", "tags": [], "hasKey": false },
+        { "id": "729353239", "name": "31", "tags": [], "hasKey": false },
+        { "id": "729353240", "name": "32", "tags": [], "hasKey": false },
+        { "id": "729353241", "name": "33", "tags": [], "hasKey": false },
+        { "id": "729353242", "name": "34", "tags": [], "hasKey": false },
+        { "id": "729353243", "name": "35", "tags": [], "hasKey": false },
+        { "id": "729353244", "name": "36", "tags": [], "hasKey": false },
+        { "id": "729353245", "name": "37", "tags": [], "hasKey": false },
+        { "id": "729353246", "name": "38", "tags": [], "hasKey": false },
+        { "id": "729353247", "name": "39", "tags": [], "hasKey": false },
+        { "id": "729353248", "name": "40", "tags": [], "hasKey": false }
+      ]
     }
   ]
 }
